@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Te amo mi hermosha</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+    <link rel="icon" href="imagenes/amormio.jpg" type="image/x-icon">
+</head>
+<body>
+<nav class="navbar">
+  <div class="navbar-container">
+    <a href="index.html" class="nav-link">Noshotrosh</a>
+    <a href="vale.html" class="nav-link">Vale por...</a>
+  </div>
+</nav>
+
+
+  <!-- Música de fondo -->
+  <audio autoplay loop>
+    <source src="cancion.mp3" type="audio/mpeg" />
+    Tu navegador no soporta audio HTML5.
+  </audio>
+
+  <!-- Sección Hero -->
+  <header class="hero">
+    <img src="imagenes/portada.jpg" alt="Imagen principal" class="hero-img" />
+    <div class="hero-texto">
+    <h1>Hola   mi    amorchito</h1>
+    <p></p>
+  </div>
+  </header>
+
+  <!-- Secciones -->
+<main>
+  <section class="seccion" data-aos="fade-up">
+    <img src="imagenes/salimoss.jpg" alt="Julio 1" class="seccion-img" />
+    <div class="seccion-texto">
+      <h2>Viaje!</h2>
+    </div>
+  </section>
+
+  <section class="seccion" data-aos="fade-right">
+    <img src="imagenes/milinda.jpg" alt="Agosto" class="seccion-img" />
+    <div class="seccion-texto">
+      <h2>Mi hogar</h2>
+    </div>
+  </section>
+
+  <section class="seccion" data-aos="fade-up">
+    <img src="imagenes/amormio.jpg" alt="Septiembre" class="seccion-img" />
+    <div class="seccion-texto">
+      <h2>Hermosha</h2>
+    </div>
+  </section>
+  <section class="seccion" data-aos="fade-up">
+    <img src="imagenes/hogar.jpg" alt="Septiembre" class="seccion-img" />
+    <div class="seccion-texto">
+      <h2>Casha</h2>
+    </div>
+  </section>
+  <section class="seccion" data-aos="fade-up">
+    <img src="imagenes/cenita.jpg" alt="Septiembre" class="seccion-img" />
+    <div class="seccion-texto">
+      <h2>Cenita</h2>
+    </div>
+  </section>
+  <section class="seccion" data-aos="fade-up">
+    <img src="imagenes/perfecta.jpg" alt="Septiembre" class="seccion-img" />
+    <div class="seccion-texto">
+      <h2>Perfecta que sos</h2>
+    </div>
+  </section>
+  <section class="seccion" data-aos="fade-up">
+    <img src="imagenes/preciosha.jpg" alt="Septiembre" class="seccion-img" />
+    <div class="seccion-texto">
+      <h2>Mi todo</h2>
+    </div>
+  </section>
+  <section class="seccion" data-aos="fade-up">
+    <img src="imagenes/ulala.jpg" alt="Septiembre" class="seccion-img" />
+    <div class="seccion-texto">
+      <h2>Ulala</h2>
+    </div>
+  </section>
+  <section class="seccion" data-aos="fade-up">
+    <img src="imagenes/tiernita.jpg" alt="Septiembre" class="seccion-img" />
+    <div class="seccion-texto">
+      <h2>beeebuuu</h2>
+    </div>
+  </section>
+
+  
+</main>
+
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  </script>
+  <script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const audio = document.querySelector("audio");
+
+    const startAudio = () => {
+      audio.play().catch(e => {
+        console.log("Autoplay bloqueado, esperando interacción");
+      });
+      document.removeEventListener('click', startAudio);
+      document.removeEventListener('touchstart', startAudio);
+    };
+
+    document.addEventListener('click', startAudio);
+    document.addEventListener('touchstart', startAudio);
+  });
+</script>
+
+</body>
+</html>
