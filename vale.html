@@ -10,7 +10,7 @@
     <link rel="icon" href="imagenes/milinda.jpg" type="image/x-icon">
 </head>
 <body>
-  <!-- Barra de navegación -->
+ 
 <nav class="navbar">
   <div class="navbar-container">
     <a href="index.html" class="nav-link">Noshotrosh</a>
@@ -35,7 +35,6 @@
     <div class="vale-collage">
       <div class="vale-polaroid">
         <h2 id="valeDelDia" class="vale-texto">
-          <!-- Aquí aparece el vale -->
         </h2>
       </div>
       <button id="mostrarVale" class="vale-boton">
@@ -141,7 +140,6 @@
   </main>
 
   <script>
-    // Lista oculta de vales (puedes completarla a tu gusto)
     const vales = [
       "50 beshitosh",
       "40 abrazhosh",
@@ -154,12 +152,10 @@
       "15 minutosh reloj abrazadosh",
       "Vale inversho, ahora cho recibo 50 beshutosh sheguidosh",
 
-      // ... completa con tus vales ...
     ];
 
-    // Calculamos índice en función del día actual (para que cambie cada 24h)
     const hoy = new Date();
-    const indice = hoy.getDate() % vales.length; // o usa otro cálculo si querés aleatorio fijo por día
+    const indice = hoy.getDate() % vales.length; 
     const valeDelDia = vales[indice];
 
 
@@ -173,11 +169,10 @@
       polaroid.classList.add('show');
     });
 
-    // Contador hasta medianoche
     function actualizarContador() {
       const ahora = new Date();
       const manana = new Date(ahora);
-      manana.setHours(24,0,0,0); // medianoche siguiente
+      manana.setHours(24,0,0,0); 
       const faltante = manana - ahora;
 
       const horas = Math.floor(faltante / (1000 * 60 * 60));
