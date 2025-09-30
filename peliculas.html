@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nueshtrash Pelish - Meses</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <link rel="icon" href="imagenes/amormio.jpg" type="image/x-icon">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="nav-link">Noshotrosh</a>
+      <a href="vale.html" class="nav-link">Vale por...</a>
+      <a href="peliculas.html" class="nav-link">Pelis!!</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="inicio" class="hero">
+    <img src="imagenes/portada3.jpg" alt="Hero" class="hero-img">
+    <div class="hero-texto" style="background-color: rgba(0, 0, 0, 0.5);">
+      <h1>Peliculash por mes!</h1>
+      <p>Un recorrido mes a mes de lo que vemoos 🎬</p>
+    </div>
+  </section>
+
+  <main id="meses">
+    <h2 style="width:100%; text-align:center; font-family:'Playfair Display', serif; font-size:2.2em; margin-bottom:20px; color:#2a75e6;">
+      Seleccioná un mes
+    </h2>
+
+    <div class="peliculas-container" style="display:flex; flex-wrap:wrap; gap:30px; justify-content:center; max-width:1200px; margin:0 auto;">
+
+      <!-- Ejemplo mes septiembre -->
+      <a href="septiembre.html" class="pelicula" style="text-decoration:none; position:relative; width:280px; border-radius:20px; overflow:hidden; box-shadow:0 8px 24px rgba(0,0,0,0.15);">
+        <img src="imagenes/septiembre.jpg" alt="Septiembre" style="width:100%; height:100%; object-fit:cover; display:block;">
+        <div style="position:absolute; bottom:0; left:0; width:100%; background:rgba(42,117,230,0.8); color:#fff; padding:12px; text-align:center;">
+          <h3 style="margin:0; font-size:1.4em; font-family:'Great Vibes', cursive;">Septiembre</h3>
+        </div>
+      </a>
+
+      <!-- Duplica para otros meses -->
+      <a href="octubre.html" class="pelicula" style="text-decoration:none; position:relative; width:280px; border-radius:20px; overflow:hidden; box-shadow:0 8px 24px rgba(0,0,0,0.15);">
+        <img src="imagenes/octubre.jpg" alt="Octubre" style="width:100%; height:100%; object-fit:cover; display:block;">
+        <div style="position:absolute; bottom:0; left:0; width:100%; background:rgba(42,117,230,0.8); color:#fff; padding:12px; text-align:center;">
+          <h3 style="margin:0; font-size:1.4em; font-family:'Great Vibes', cursive;">Octubre</h3>
+        </div>
+      </a>
+
+      <!-- sigue con noviembre.html, diciembre.html, etc -->
+
+    </div>
+  </main>
+</body>
+</html>

@@ -202,6 +202,22 @@ main {
   transform: translateX(-50%) scale(1.04) rotate(-2deg);
 }
 
+/* Pelicula hover: oculta info */
+.pelicula:hover {
+  transform: scale(1.1);
+  transition: transform 1s;
+  box-shadow: 0 12px 36px rgba(0,0,0,0.2);
+}
+.pelicula:hover .pelicula-info {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.7);
+  transition: opacity 0.6s, transform 1s;
+}
+.pelicula-info {
+  opacity: 1;
+  transition: opacity 0.6s, transform 1s;
+}
 @media (max-width: 1100px) {
   main {
     gap: 30px 10px;
