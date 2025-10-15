@@ -5,7 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sorpresa ✨</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Great+Vibes&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css"> 
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Ajuste de tamaño para que se vea mejor la imagen */
+    #sorpresa {
+      width: 400px;
+      height: 500px;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+    #sorpresa .seccion-img {
+      width: 280px;
+      height: 280px;
+    }
+    #sorpresa .seccion-img:hover {
+      transform: scale(1.5);
+    }
+    #pistaBtn {
+      margin-top: 20px;
+      padding: 10px 25px;
+      background: #2a75e6;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-family: 'Playfair Display', serif;
+      cursor: pointer;
+      box-shadow: 0 4px 10px #0002;
+    }
+    #pistaBtn:hover {
+      background: #1f5bc2;
+    }
+  </style>
 </head>
 <body>
 
@@ -32,18 +62,17 @@
     <div class="seccion" id="bloqueo">
       <img src="https://cdn-icons-png.flaticon.com/512/3064/3064197.png" alt="candado" class="seccion-img">
       <div class="seccion-texto">
-        <h2></h2>
-        <p>Ingresá la contraseña de 4 letras</p>
         <input type="password" id="password" maxlength="4" placeholder="****" style="margin-top:10px; padding:8px; font-size:1em; text-align:center; border-radius:8px; border:none; box-shadow:0 2px 5px #0002;">
         <br>
         <button onclick="verificar()" style="margin-top:10px; padding:8px 20px; font-family:'Playfair Display', serif; background:#2a75e6; color:#fff; border:none; border-radius:8px; cursor:pointer;">Desbloquear</button>
         <p id="mensaje" style="margin-top:10px; color:#d33;"></p>
       </div>
+              <button id="pistaBtn" onclick="iniciarMusica()">🎧 Pedir pista!</button>
     </div>
 
     <!-- Sección sorpresa -->
     <div class="seccion" id="sorpresa" style="display:none;">
-      <img src="imagenes/tini.png" alt="Entrada al show" class="seccion-img" id="entrada" > <!-- ← reemplazá por tu imagen -->
+      <img src="imagenes/tini.png" alt="Entrada al show" class="seccion-img"> <!-- ← reemplazá por tu imagen -->
       <div class="seccion-texto">
         <h2>🎟️ ¡Sorpresa!</h2>
         <p>Prepárate para una noche mágica 💫</p>
@@ -52,7 +81,7 @@
   </main>
 
   <!-- AUDIO -->
-  <audio id="musica" src="tini.webm" type="audio/webm"></audio> <!-- reemplazá tini.mp3 por el nombre de tu archivo de audio -->
+  <audio id="musica" src="tini.webm" type="audio/webm"></audio> <!-- reemplazá tini.mp3 por tu canción -->
 
   <script>
     function verificar() {
@@ -61,16 +90,16 @@
       if (clave === 'TINI') {
         document.getElementById('bloqueo').style.display = 'none';
         document.getElementById('sorpresa').style.display = 'flex';
-        const musica = document.getElementById('musica');
-        musica.play().catch(() => {
-          // En algunos navegadores hay que interactuar primero
-          mensaje.style.color = '#2a75e6';
-          mensaje.innerText = '🎧 Tocá en cualquier parte de la pantalla para iniciar la música';
-          document.body.addEventListener('click', () => musica.play());
-        });
       } else {
         mensaje.innerText = '❌ Contraseña incorrecta';
       }
+    }
+
+    function iniciarMusica() {
+      const musica = document.getElementById('musica');
+      musica.play().catch(() => {
+        alert('Tocá en la pantalla si no se reproduce automáticamente.');
+      });
     }
   </script>
 
