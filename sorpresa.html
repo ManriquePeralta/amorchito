@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sorpresa ✨</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="#" class="nav-link">Inicio</a>
+      <a href="#" class="nav-link">Sorpresa</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <img src="https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2" alt="fondo" class="hero-img">
+    <div class="hero-texto">
+      <h1>🎤 Sorpresa Especial 🎁</h1>
+      <p>Ingresá la contraseña correcta para desbloquearla</p>
+    </div>
+  </section>
+
+  <!-- CONTENIDO -->
+  <main>
+    <!-- Sección de contraseña -->
+    <div class="seccion" id="bloqueo">
+      <img src="https://cdn-icons-png.flaticon.com/512/3064/3064197.png" alt="candado" class="seccion-img">
+      <div class="seccion-texto">
+        <h2></h2>
+        <p>Ingresá la contraseña de 4 letras</p>
+        <input type="password" id="password" maxlength="4" placeholder="****" style="margin-top:10px; padding:8px; font-size:1em; text-align:center; border-radius:8px; border:none; box-shadow:0 2px 5px #0002;">
+        <br>
+        <button onclick="verificar()" style="margin-top:10px; padding:8px 20px; font-family:'Playfair Display', serif; background:#2a75e6; color:#fff; border:none; border-radius:8px; cursor:pointer;">Desbloquear</button>
+        <p id="mensaje" style="margin-top:10px; color:#d33;"></p>
+      </div>
+    </div>
+
+    <!-- Sección sorpresa -->
+    <div class="seccion" id="sorpresa" style="display:none;">
+      <img src="imagenes/tini.png" alt="Entrada al show" class="seccion-img" id="entrada" > <!-- ← reemplazá por tu imagen -->
+      <div class="seccion-texto">
+        <h2>🎟️ ¡Sorpresa!</h2>
+        <p>Prepárate para una noche mágica 💫</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- AUDIO -->
+  <audio id="musica" src="tini.mp3"></audio> <!-- reemplazá tini.mp3 por el nombre de tu archivo de audio -->
+
+  <script>
+    function verificar() {
+      const clave = document.getElementById('password').value.toUpperCase();
+      const mensaje = document.getElementById('mensaje');
+      if (clave === 'TINI') {
+        document.getElementById('bloqueo').style.display = 'none';
+        document.getElementById('sorpresa').style.display = 'flex';
+        const musica = document.getElementById('musica');
+        musica.play().catch(() => {
+          // En algunos navegadores hay que interactuar primero
+          mensaje.style.color = '#2a75e6';
+          mensaje.innerText = '🎧 Tocá en cualquier parte de la pantalla para iniciar la música';
+          document.body.addEventListener('click', () => musica.play());
+        });
+      } else {
+        mensaje.innerText = '❌ Contraseña incorrecta';
+      }
+    }
+  </script>
+
+</body>
+</html>

@@ -214,6 +214,7 @@ main {
   transform: scale(0.7);
   transition: opacity 0.6s, transform 1s;
 }
+
 .pelicula-info {
   opacity: 1;
   transition: opacity 0.6s, transform 1s;
